@@ -3,13 +3,13 @@
 // Graph Structure
 
 public class Graph {
-	public int _num_vertices;
-	public int _num_active_vertices;
-	public int _num_edges;
-	public int _k;
-	public int _matrix;
-	public int _active;
-	public short _degree;
+	public int _num_vertices; 			//total number of vertices in graph
+	public int _num_active_vertices;	//number of activer vertices
+	public int _num_edges;				//number of active edges
+	public int _k;						//expected size
+	public int _matrix;					//bit-based adjacency matrix
+	public int _active;					//bit-based vector: 1-active
+	public short _degree;				//number of edges each vertex have (<65536)
 	
 	// Getters and Setters
 	public int get_num_vertices() {
