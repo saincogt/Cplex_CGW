@@ -4,7 +4,7 @@
 
 public class Graph {
 	public int _num_vertices; 			//total number of vertices in graph
-	public int _num_active_vertices;	//number of activer vertices
+	public int _num_active_vertices;	//number of active vertices
 	public int _num_edges;				//number of active edges
 	public int _k;						//expected size
 	public int _matrix;					//bit-based adjacency matrix
@@ -55,6 +55,20 @@ public class Graph {
 		this._degree = _degree;
 	}
 	
+	public void inc_k() {
+		this._k += 1;
+	}
 	
+	public void dec_k() {
+		this._k -= 1;
+	}
 
+	public boolean edge_exist(int g, int v) {
+		return IS_SET(this.get_matrix(), v);
+	}
+	
+	private boolean IS_SET(int get_matrix, int v) {
+		// TODO Auto-generated method stub
+		return vector[(bit) >> RSV] & 1 << ((bit) & XBM);
+	}
 }
