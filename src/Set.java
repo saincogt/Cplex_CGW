@@ -1,5 +1,7 @@
 
 public class Set {
+	private static final int RSV = 5;
+	private static final int XBM = 31;
 	public int _set_size;     	/* total number of vertices */
 	public int _num_elements; 	/* number of vertices in the set */
 	public int _set;         	/* bit-based vector: 1 - in set */
@@ -23,12 +25,21 @@ public class Set {
 		this._set = _set;
 	}
 	
-	public boolean in_set(Set s, int u) {
+	public int in_set(Set s, int u) {
 		return IS_SET(s._set, u);
 	}
-	private boolean IS_SET(int _set2, int u) {
-		// TODO Auto-generated method stub
-		return false;
+	
+	
+	
+	public int IS_SET(int[] vector, int bit) {
+		return (vector[(bit) >> RSV] & 1 << ((bit) & XBM));
 	}
 	
+	public int SET_BIT(int[] vector, int bit) {
+		return (vector[(bit) >> RSV] |= 1 << ((bit) & XBM));
+	}
+	
+	
 }
+	
+

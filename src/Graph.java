@@ -9,7 +9,7 @@ public class Graph {
 	public int _num_active_vertices;	//number of active vertices
 	public int _num_edges;				//number of active edges
 	public int _k;						//expected size
-	public int _matrix;					//bit-based adjacency matrix
+	public int[] _matrix;				//bit-based adjacency matrix
 	public int _active;					//bit-based vector: 1-active
 	public short _degree;				//number of edges each vertex have (<65536)
 	
@@ -38,10 +38,11 @@ public class Graph {
 	public void set_k(int _k) {
 		this._k = _k;
 	}
-	public int get_matrix() {
+	public int[] get_matrix() {
 		return _matrix;
 	}
-	public void set_matrix(int _matrix) {
+	
+	public void set_matrix(int[] _matrix) {
 		this._matrix = _matrix;
 	}
 	public int get_active() {
@@ -65,15 +66,13 @@ public class Graph {
 		this._k -= 1;
 	}
 
-	public int edge_exist(int g, int v) {
-		return IS_SET(this.get_matrix(), v);
+	/* check to see if an edge exists or not */
+	public int edge_exists(int u, int v) {
+		Graph g;
+		return IS_SET(g._matrix[u], v);
 	}
 	
-	@SuppressWarnings("null")
-	private int IS_SET(int get_matrix, int v) {
-		int bit = 0;
-		int[] vector = null;
-		// TODO Auto-generated method stub
+	public int IS_SET(int[] vector , int bit) {
 		return vector[(bit) >> RSV] & 1 << ((bit) & XBM);
 	}
 }
