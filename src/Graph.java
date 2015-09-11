@@ -3,6 +3,8 @@
 // Graph Structure
 
 public class Graph {
+	private static final int RSV = 5;
+	private static final int XBM = 31;
 	public int _num_vertices; 			//total number of vertices in graph
 	public int _num_active_vertices;	//number of active vertices
 	public int _num_edges;				//number of active edges
@@ -63,11 +65,14 @@ public class Graph {
 		this._k -= 1;
 	}
 
-	public boolean edge_exist(int g, int v) {
+	public int edge_exist(int g, int v) {
 		return IS_SET(this.get_matrix(), v);
 	}
 	
-	private boolean IS_SET(int get_matrix, int v) {
+	@SuppressWarnings("null")
+	private int IS_SET(int get_matrix, int v) {
+		int bit = 0;
+		int[] vector = null;
 		// TODO Auto-generated method stub
 		return vector[(bit) >> RSV] & 1 << ((bit) & XBM);
 	}

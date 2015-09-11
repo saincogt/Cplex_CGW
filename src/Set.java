@@ -24,7 +24,11 @@ public class Set {
 	}
 	
 	public boolean in_set(Set s, int u) {
-		return IS_SET(s->_set, u);
+		return IS_SET(s._set, u);
+	}
+	private boolean IS_SET(int _set2, int u) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 	
 }
