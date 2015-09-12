@@ -11,13 +11,12 @@ public class CplexCWGApply {
 	  return w;
 	}
 	
-	public static void CplexCWGApply() {
-		Graph G = new Graph();
+	public static void CplexCWGApply(Graph G) {
 		int NUM = G.get_num_vertices();
 		int Ncol = NUM * (NUM-1) / 2;
 		int[] colno = null;
 		int i, j, k, a;
-		int columnNumber;
+		int[][] columnNumber = null;
 		double[] row = null;
 		double X;
 		double utime;
@@ -26,17 +25,14 @@ public class CplexCWGApply {
 		
 		utime = System.currentTimeMillis();
 		
-		// Fix it start
 		for(i = 0; i < NUM; i++) {
 			
 		    for(j = i + 1; j < NUM; j++) {
 		    	
 		    	columnNumber[i][j] = column_number_get(i, j, NUM);
 		    	columnNumber[j][i] = columnNumber[i][j];
-		    	}
 		    }
-		//Fix it end
-		
+		}		
 	}	
 	
 	
