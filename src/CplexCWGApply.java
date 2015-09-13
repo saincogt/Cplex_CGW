@@ -1,7 +1,7 @@
 
 public class CplexCWGApply {
 
-	private static int column_number_get(int m, int n, int num)
+	private int column_number_get(int m, int n, int num)
 	{ 
 	  int i, j, w = 0;
 	  for(i = 0; i < m; i++) {
@@ -12,6 +12,7 @@ public class CplexCWGApply {
 	}
 	
 	public static void CplexCWGApply(Graph G) {
+		CplexCWGApply CA = new CplexCWGApply();
 		int NUM = G.get_num_vertices();
 		int Ncol = NUM * (NUM-1) / 2;
 		int[] colno = null;
@@ -29,7 +30,7 @@ public class CplexCWGApply {
 			
 		    for(j = i + 1; j < NUM; j++) {
 		    	
-		    	columnNumber[i][j] = column_number_get(i, j, NUM);
+		    	columnNumber[i][j] = CA.column_number_get(i, j, NUM);
 		    	columnNumber[j][i] = columnNumber[i][j];
 		    }
 		}		

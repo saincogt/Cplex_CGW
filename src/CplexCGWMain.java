@@ -12,6 +12,7 @@ public class CplexCGWMain {
 		int RSV = 5;
 		int XBM = 31;
 		
+		System.out.println((2)&1<<1);
 		System.out.println(vector[bit]);
 		System.out.println(333 >> RSV);
 		System.out.println(vector[(bit) >> RSV]);
