@@ -1,3 +1,7 @@
+import java.util.Stack;
+import java.util.Queue;
+import java.util.*;
+
 
 public class CplexCGWMain {
 
@@ -11,6 +15,23 @@ public class CplexCGWMain {
 		int bit = 2;
 		int RSV = 5;
 		int XBM = 31;
+		
+		Stack<String> s = new Stack<String>();
+		s.push("aaa");
+		s.push("bbbb");
+		System.out.println(s.pop());
+		System.out.println(s.pop());
+		Set<String> set = new HashSet<String>();
+		
+		set.add("Hello");
+		set.add("Yo");
+		System.out.println(set.contains("Yes"));
+		set.remove("Yo");
+		set.add("Yes");
+		System.out.println(set.contains("Yo"));
+		System.out.println(set.contains("Yes"));
+
+		
 		
 		System.out.println((2)&1<<1);
 		System.out.println(vector[bit]);
