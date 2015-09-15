@@ -12,6 +12,7 @@ public class CplexCWGApply {
 	}
 	
 	public static void CplexCWGApply() {
+		Graph G = new Graph();
 		CplexCWGApply CA = new CplexCWGApply();
 		int NUM = G.get_num_vertices();
 		int Ncol = NUM * (NUM-1) / 2;
