@@ -29,6 +29,7 @@ public class CplexCGWMain {
 			
 			// Solve
 			cplex.solve();
+			
 						
 		}
 		catch (IloException exc) {
